@@ -117,7 +117,7 @@ public class FuncionarioDAOImpl implements FuncionarioDAO {
 
     @Override
     public List<Funcionario> obtenerTodos() throws DAOException {
-        String sql = "SELECT * FROM funcionario ORDER BY apellidos, nombres";
+        String sql = "SELECT * FROM funcionario ORDER BY id_funcionario";
         List<Funcionario> funcionarios = new ArrayList<>();
         
         try (Connection conn = ConexionDB.getConexion();
