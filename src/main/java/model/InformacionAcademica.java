@@ -7,7 +7,6 @@ public class InformacionAcademica {
     private String nivelEstudio;
     private String titulo;
 
-    // Getters y Setters
     public int getIdInfoAcademica() {
         return idInfoAcademica;
     }

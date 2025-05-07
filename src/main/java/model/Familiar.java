@@ -10,7 +10,6 @@ public class Familiar {
     private String rol;
     private Date fechaNacimiento;
 
-    // Getters y Setters
     public int getIdFamiliar() {
         return idFamiliar;
     }

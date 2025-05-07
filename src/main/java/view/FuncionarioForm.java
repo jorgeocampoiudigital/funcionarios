@@ -32,52 +32,42 @@ public class FuncionarioForm extends JFrame {
         JPanel panel = new JPanel(new GridLayout(9, 2, 5, 5));
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        // Tipo Identificación
         panel.add(new JLabel("Tipo Identificación:"));
         cmbTipoIdentificacion = new JComboBox<>(new String[]{"", "Cédula", "Cédula Extranjería", "Pasaporte", "NIT"});
         panel.add(cmbTipoIdentificacion);
 
-        // Número Identificación
         panel.add(new JLabel("Número Identificación:"));
         txtNumeroIdentificacion = new JTextField();
         panel.add(txtNumeroIdentificacion);
 
-        // Nombres
         panel.add(new JLabel("Nombres:"));
         txtNombres = new JTextField();
         panel.add(txtNombres);
 
-        // Apellidos
         panel.add(new JLabel("Apellidos:"));
         txtApellidos = new JTextField();
         panel.add(txtApellidos);
 
-        // Estado Civil
         panel.add(new JLabel("Estado Civil:"));
         cmbEstadoCivil = new JComboBox<>(new String[]{"", "Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a"});
         panel.add(cmbEstadoCivil);
 
-        // Sexo
         panel.add(new JLabel("Sexo:"));
         cmbSexo = new JComboBox<>(new String[]{"", "M", "F", "O"});
         panel.add(cmbSexo);
 
-        // Dirección
         panel.add(new JLabel("Dirección:"));
         txtDireccion = new JTextField();
         panel.add(txtDireccion);
 
-        // Teléfono
         panel.add(new JLabel("Teléfono:"));
         txtTelefono = new JTextField();
         panel.add(txtTelefono);
 
-        // Fecha Nacimiento
         panel.add(new JLabel("Fecha Nacimiento (YYYY-MM-DD):"));
         txtFechaNacimiento = new JTextField();
         panel.add(txtFechaNacimiento);
 
-        // Botones
         btnGuardar = new JButton("Guardar");
         btnCancelar = new JButton("Cancelar");
 
@@ -89,8 +79,6 @@ public class FuncionarioForm extends JFrame {
         add(buttonPanel, BorderLayout.SOUTH);
     }
 
-    // Métodos SET para prellenar el formulario
-    
     public void setTipoIdentificacion(String tipoIdentificacion) {
         cmbTipoIdentificacion.setSelectedItem(tipoIdentificacion);
     }
@@ -132,8 +120,6 @@ public class FuncionarioForm extends JFrame {
         txtFechaNacimiento.setText(fechaNacimiento);
     }
 
-    // Métodos GET para obtener los valores del formulario
-    
     public String getTipoIdentificacion() {
         return (String) cmbTipoIdentificacion.getSelectedItem();
     }
@@ -170,8 +156,6 @@ public class FuncionarioForm extends JFrame {
         return txtFechaNacimiento.getText();
     }
 
-    // Métodos para los listeners de los botones
-    
     public void addGuardarListener(ActionListener listener) {
         btnGuardar.addActionListener(listener);
     }
@@ -180,8 +164,6 @@ public class FuncionarioForm extends JFrame {
         btnCancelar.addActionListener(listener);
     }
 
-    // Métodos para mostrar mensajes
-    
     public void mostrarError(String mensaje) {
         JOptionPane.showMessageDialog(this, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
     }

@@ -24,7 +24,6 @@ public class FuncionarioList extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Modelo de tabla
         tableModel = new DefaultTableModel();
         tableModel.addColumn("ID");
         tableModel.addColumn("Nombres");
@@ -36,7 +35,6 @@ public class FuncionarioList extends JFrame {
         table = new JTable(tableModel);
         JScrollPane scrollPane = new JScrollPane(table);
 
-        // Botones
         btnNuevo = new JButton("Nuevo");
         btnEditar = new JButton("Editar");
         btnEliminar = new JButton("Eliminar");
@@ -72,17 +70,14 @@ public class FuncionarioList extends JFrame {
             return null;
         }
         
-        // Crear un objeto Funcionario con los datos de la fila seleccionada
         Funcionario funcionario = new Funcionario();
         funcionario.setIdFuncionario((Integer) tableModel.getValueAt(selectedRow, 0));
         funcionario.setNombres((String) tableModel.getValueAt(selectedRow, 1));
         funcionario.setApellidos((String) tableModel.getValueAt(selectedRow, 2));
         
-        // Nota: Para editar, necesitarás obtener el objeto completo desde la base de datos
         return funcionario;
     }
 
-    // Métodos para los listeners de los botones
     public void addNuevoListener(ActionListener listener) {
         btnNuevo.addActionListener(listener);
     }
@@ -95,7 +90,6 @@ public class FuncionarioList extends JFrame {
         btnEliminar.addActionListener(listener);
     }
 
-    // Método para mostrar mensajes
     public void mostrarMensaje(String mensaje, String titulo, int tipo) {
         JOptionPane.showMessageDialog(this, mensaje, titulo, tipo);
     }

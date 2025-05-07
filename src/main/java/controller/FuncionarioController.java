@@ -83,13 +83,11 @@ public class FuncionarioController {
       }
       
       try {
-          // Obtener el funcionario completo de la base de datos
           Funcionario funcionarioCompleto = funcionarioDAO.obtenerPorId(funcionario.getIdFuncionario());
           
           formView = new FuncionarioForm();
           formView.setTitle("Editar Funcionario - " + funcionarioCompleto.getNombres());
           
-          // Poblar el formulario con los datos del funcionario
           formView.setTipoIdentificacion(funcionarioCompleto.getTipoIdentificacion());
           formView.setNumeroIdentificacion(funcionarioCompleto.getNumeroIdentificacion());
           formView.setNombres(funcionarioCompleto.getNombres());

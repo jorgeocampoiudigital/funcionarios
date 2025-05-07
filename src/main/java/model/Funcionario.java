@@ -14,7 +14,6 @@ public class Funcionario {
     private String telefono;
     private Date fechaNacimiento;
 
-    // Getters y Setters
     public int getIdFuncionario() {
         return idFuncionario;
     }
